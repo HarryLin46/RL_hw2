@@ -75,7 +75,7 @@ def run_MC_prediction(grid_world: GridWorld,seed):
         prediction.get_all_state_values(),
         title=f"Monte Carlo Prediction",
         show=False,
-        filename=f"MC_prediction.png",
+        filename=f"my_result/MC_prediction.png",
     )
     grid_world.reset()
     grid_world.reset_step_count()
@@ -98,7 +98,7 @@ def run_TD_prediction(grid_world: GridWorld, seed):
         prediction.get_all_state_values(),
         title=f"TD(0) Prediction",
         show=False,
-        filename=f"TD0_prediction.png",
+        filename=f"my_result/TD0_prediction.png",
     )
     grid_world.reset()
     grid_world.reset_step_count()
@@ -122,7 +122,7 @@ def run_NstepTD_prediction(grid_world: GridWorld,seed):
         prediction.get_all_state_values(),
         title=f"N-step TD Prediction",
         show=False,
-        filename=f"NstepTD_prediction.png",
+        filename=f"my_result/NstepTD_prediction.png",
     )
     grid_world.reset()
     grid_world.reset_step_count()
@@ -143,7 +143,7 @@ def run_MC_policy_iteration(grid_world: GridWorld, iter_num: int):
         policy_iteration.get_policy_index(),
         title=f"MC Policy Iteration",
         show=False,
-        filename=f"MC_policy_iteration_{iter_num}.png",
+        filename=f"my_result/MC_policy_iteration_{iter_num}.png",
     )
     history = grid_world.run_policy(policy_iteration.get_policy_index())
     print(f"Solved in {bold(green(len(history)))} steps")
@@ -168,7 +168,7 @@ def run_SARSA(grid_world: GridWorld, iter_num: int):
         policy_iteration.get_policy_index(),
         title=f"SARSA",
         show=False,
-        filename=f"SARSA_iteration_{iter_num}.png",
+        filename=f"my_result/SARSA_iteration_{iter_num}.png",
     )
     history = grid_world.run_policy(policy_iteration.get_policy_index())
     print(f"Solved in {bold(green(len(history)))} steps")
@@ -197,7 +197,7 @@ def run_Q_Learning(grid_world: GridWorld, iter_num: int):
         policy_iteration.get_policy_index(),
         title=f"Q_Learning",
         show=False,
-        filename=f"Q_Learning_iteration_{iter_num}.png",
+        filename=f"my_result/Q_Learning_iteration_{iter_num}.png",
     )
     history = grid_world.run_policy(policy_iteration.get_policy_index())
     print(f"Solved in {bold(green(len(history)))} steps")
@@ -212,11 +212,11 @@ if __name__ == "__main__":
     seed = 1
     grid_world = init_grid_world("maze.txt")
     # 2-1
-    run_MC_prediction(grid_world,seed)
-    run_TD_prediction(grid_world,seed)
-    run_NstepTD_prediction(grid_world,seed)
+    # run_MC_prediction(grid_world,seed)
+    # run_TD_prediction(grid_world,seed)
+    # run_NstepTD_prediction(grid_world,seed)
 
-    # # 2-2
+    # # # 2-2
     run_MC_policy_iteration(grid_world, 512000)
-    run_SARSA(grid_world, 512000)
-    run_Q_Learning(grid_world, 50000)
+    # run_SARSA(grid_world, 512000)
+    # run_Q_Learning(grid_world, 50000)
