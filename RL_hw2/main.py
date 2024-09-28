@@ -217,6 +217,6 @@ if __name__ == "__main__":
     # run_NstepTD_prediction(grid_world,seed)
 
     # # # 2-2
-    run_MC_policy_iteration(grid_world, 512000)
-    # run_SARSA(grid_world, 512000)
+    # run_MC_policy_iteration(grid_world, 512000)
+    run_SARSA(grid_world, 512000)
     # run_Q_Learning(grid_world, 50000)

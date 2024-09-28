@@ -361,14 +361,20 @@ class SARSA(ModelFreeControl):
     def policy_eval_improve(self, s, a, r, s2, a2, is_done) -> None:
         """Evaluate the policy and update the values after one step"""
         # TODO: Evaluate Q value after one step and improve the policy
+        if is_done: #s2,a2 is meaningless
+            self.q_values[s,a] = self.q_values[s,a] + self.lr*(r + 0 - self.q_values[s,a])
+        else:
+            self.q_values[s,a] = self.q_values[s,a] + self.lr*(r + self.discount_factor*self.q_values[s2,a2] - self.q_values[s,a])
         
-        raise NotImplementedError
+        
 
     def run(self, max_episode=1000) -> None:
         """Run the algorithm until convergence."""
         # TODO: Implement the TD policy evaluation with epsilon-greedy
         iter_episode = 0
         current_state = self.grid_world.reset()
+        St= current_state
+        At, next_state, reward, done = self.collect_data() #now agent at 2nd state, due to step()
         prev_s = None
         prev_a = None
         prev_r = None
@@ -376,8 +382,24 @@ class SARSA(ModelFreeControl):
         while iter_episode < max_episode:
             # TODO: write your code here
             # hint: self.grid_world.reset() is NOT needed here
+            action_probs = self.policy[next_state]  
+            next_At = self.rng.choice(self.action_space, p=action_probs) 
+            self.policy_eval_improve(St,At,reward,next_state,next_At,done)
+
+            if done:
+                # St = self.grid_world.get_current_state() #initialize S, but is no need since grid world help us reset and return as next_state
+                iter_episode+=1
+                if iter_episode%1000==0:
+                    print(iter_episode)
+
+            St = next_state
+            At = next_At
+            next_state, reward, done = self.grid_world.step(At)  
+        self.policy_index = self.get_policy_index()
             
-            raise NotImplementedError
+            
+            
+            
 
 class Q_Learning(ModelFreeControl):
     def __init__(
