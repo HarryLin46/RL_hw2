@@ -2,6 +2,7 @@ import numpy as np
 import json
 from collections import deque
 import math
+import random
 
 from gridworld import GridWorld
 
@@ -366,6 +367,13 @@ class SARSA(ModelFreeControl):
         else:
             self.q_values[s,a] = self.q_values[s,a] + self.lr*(r + self.discount_factor*self.q_values[s2,a2] - self.q_values[s,a])
         
+        #improve the policy
+        a_star = np.argmax(self.q_values[s])
+        for a in range(4):#a=0,1,2,3
+            if a==a_star:
+                self.policy[s,a] = self.epsilon/4 + 1 - self.epsilon
+            else:
+                self.policy[s,a] = self.epsilon/4
         
 
     def run(self, max_episode=1000) -> None:
@@ -375,6 +383,7 @@ class SARSA(ModelFreeControl):
         current_state = self.grid_world.reset()
         St= current_state
         At, next_state, reward, done = self.collect_data() #now agent at 2nd state, due to step()
+        # St=next_state
         prev_s = None
         prev_a = None
         prev_r = None
@@ -421,22 +430,40 @@ class Q_Learning(ModelFreeControl):
 
     def add_buffer(self, s, a, r, s2, d) -> None:
         # TODO: add new transition to buffer
-        raise NotImplementedError
+        self.buffer.append([s,a,r,s2,d])
 
     def sample_batch(self) -> np.ndarray:
         # TODO: sample a batch of index of transitions from the buffer
-        raise NotImplementedError
+        batch = random.sample(self.buffer, self.sample_batch_size)
+        batch_np = np.array(batch,dtype=object)
+        return batch_np
 
     def policy_eval_improve(self, s, a, r, s2, is_done) -> None:
         """Evaluate the policy and update the values after one step"""
         #TODO: Evaluate Q value after one step and improve the policy
-        raise NotImplementedError
+        if is_done:
+            self.q_values[s,a] = self.q_values[s,a] + self.lr * (r + 0 - self.q_values[s,a])
+        else:
+            # print(s2)
+            # print(self.q_values[s2,0])
+            # print([self.q_values[s2,a2] for a2 in range(4)])
+            # print(max([self.q_values[s2,a2] for a2 in range(4)]))
+            self.q_values[s,a] = self.q_values[s,a] + self.lr * (r + self.discount_factor*max([self.q_values[s2,a2] for a2 in range(4)]) - self.q_values[s,a])
+
+        #improve the policy
+        a_star = np.argmax(self.q_values[s])
+        for a in range(4):#a=0,1,2,3
+            if a==a_star:
+                self.policy[s,a] = self.epsilon/4 + 1 - self.epsilon
+            else:
+                self.policy[s,a] = self.epsilon/4
 
     def run(self, max_episode=1000) -> None:
         """Run the algorithm until convergence."""
         # TODO: Implement the Q_Learning algorithm
         iter_episode = 0
         current_state = self.grid_world.reset()
+        St= current_state
         prev_s = None
         prev_a = None
         prev_r = None
@@ -445,6 +472,23 @@ class Q_Learning(ModelFreeControl):
         while iter_episode < max_episode:
             # TODO: write your code here
             # hint: self.grid_world.reset() is NOT needed here
+            At, next_state, reward, is_done = self.collect_data() 
 
-            raise NotImplementedError
+            #store to the transition
+            self.add_buffer(St,At,reward,next_state,is_done)
+
+            transition_count+=1
+            if transition_count%self.update_frequency==0 and len(self.buffer)>self.sample_batch_size: #then update Q
+                Batch = self.sample_batch()
+                for [s,a,r,s2,done] in Batch:
+                    # s = int(s)
+                    # a = int(a)
+                    self.policy_eval_improve(s,a,r,s2,done)
+
+            if is_done:
+                iter_episode+=1
+                if iter_episode%1000==0:
+                    print(iter_episode)
+
+            St = next_state
             
