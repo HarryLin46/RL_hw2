@@ -274,7 +274,7 @@ class MonteCarloPolicyIteration(ModelFreeControl):
         self.lr      = learning_rate
         self.epsilon = epsilon
 
-    def policy_evaluation(self, States, Actions, Rewards) -> None:
+    def policy_evaluation(self, States, Actions, Rewards,Losses:list) -> None:
         """Evaluate the policy and update the values after one episode"""
         # TODO: Evaluate state value for each Q(s,a)
 
@@ -293,6 +293,7 @@ class MonteCarloPolicyIteration(ModelFreeControl):
         #then update Q, based on history. This time we implement every-visit
         #every states are always be updated
         Gain=0
+        loss_trace=[]
         for t in range(len(States)-1,-1,-1): #t=T-1 - 0
             # print("t",t)
             Gain = self.discount_factor*Gain + Rewards[t+1]
@@ -301,6 +302,8 @@ class MonteCarloPolicyIteration(ModelFreeControl):
             At = Actions[t]
 
             self.q_values[St,At] = self.q_values[St,At] + self.lr*(Gain - self.q_values[St,At])
+            loss_trace.append(Gain - self.q_values[St,At])
+        Losses.append(np.abs(sum(loss_trace) / len(loss_trace)))
         # print("update Q finished!")
 
 
@@ -325,15 +328,16 @@ class MonteCarloPolicyIteration(ModelFreeControl):
         iter_episode = 0
         current_state = self.grid_world.reset()
         self.Rewards = deque(maxlen=10) #remember the rewards of last 10 episodes 
+        self.Losses = deque(maxlen=10) #remember the rewards of last 10 episodes
         while iter_episode < max_episode:
             # TODO: write your code here
             # hint: self.grid_world.reset() is NOT needed here
 
-            
+            current_state = self.grid_world.get_current_state()
             state_trace   = [current_state]
             action_trace  = []
             reward_trace  = [-999] #for index convenient
-            self.policy_evaluation(state_trace,action_trace,reward_trace)
+            self.policy_evaluation(state_trace,action_trace,reward_trace,self.Losses)
 
             self.policy_improvement()
 
@@ -342,18 +346,34 @@ class MonteCarloPolicyIteration(ModelFreeControl):
             
             
             # print(iter_episode)
-            if iter_episode%50000==0:
-                print(f"It's iter:{iter_episode}")
-                print(reward_trace[1:])
-                print(np.mean(reward_trace[1:]))
-                print(list[self.Rewards])
+            # if iter_episode%50000==0:
+            #     print(f"It's iter:{iter_episode}")
+            #     print(reward_trace[1:])
+            #     print(np.mean(reward_trace[1:]))
+            #     print(list[self.Rewards])
             self.Rewards.append(np.mean(reward_trace[1:]))
-            if iter_episode>=9 and iter_episode%1000==0:
-                Average_Reward = np.mean(list(self.Rewards))
-                wandb.log({
-                    "episode": iter_episode,  # 當前回合
-                    "total_reward": np.log(Average_Reward),  # 該回合的總回報
-                })
+ 
+            if iter_episode>=9:
+                if iter_episode<=10000:#early stage, we want more samples
+                    if iter_episode%300==9:
+                        # print("self.Rewards:",self.Rewards)
+                        Average_Reward = np.mean(list(self.Rewards))
+                        Average_Loss = np.mean(list(self.Losses))
+                        wandb.log({
+                            "episode": iter_episode,
+                            "average_reward": Average_Reward,
+                            "loss": Average_Loss,
+                        })
+                else:
+                    if iter_episode%1000==10 or iter_episode==512000:
+                        # print("self.Rewards:",self.Rewards)
+                        Average_Reward = np.mean(list(self.Rewards))
+                        Average_Loss = np.mean(list(self.Losses))
+                        wandb.log({
+                            "episode": iter_episode,
+                            "average_reward": Average_Reward,
+                            "loss": Average_Loss,
+                        })
             iter_episode += 1
 
         self.policy_index = self.get_policy_index()
@@ -374,12 +394,14 @@ class SARSA(ModelFreeControl):
         self.lr      = learning_rate
         self.epsilon = epsilon
 
-    def policy_eval_improve(self, s, a, r, s2, a2, is_done) -> None:
+    def policy_eval_improve(self, s, a, r, s2, a2, is_done,loss_trace:list) -> None:
         """Evaluate the policy and update the values after one step"""
         # TODO: Evaluate Q value after one step and improve the policy
         if is_done: #s2,a2 is meaningless
+            loss_trace.append(np.abs(r + 0 - self.q_values[s,a]))
             self.q_values[s,a] = self.q_values[s,a] + self.lr*(r + 0 - self.q_values[s,a])
         else:
+            loss_trace.append(np.abs(r + self.discount_factor*self.q_values[s2,a2] - self.q_values[s,a]))
             self.q_values[s,a] = self.q_values[s,a] + self.lr*(r + self.discount_factor*self.q_values[s2,a2] - self.q_values[s,a])
         
         #improve the policy
@@ -404,39 +426,48 @@ class SARSA(ModelFreeControl):
         prev_r = None
         is_done = False
         reward_trace  = [reward]
+        loss_trace = []
         self.Rewards = deque(maxlen=10) #remember the rewards of last 10 episodes 
+        self.Losses = deque(maxlen=10) #remember the loss of last 10 episodes 
         while iter_episode < max_episode:
             # TODO: write your code here
             # hint: self.grid_world.reset() is NOT needed here
             action_probs = self.policy[next_state]  
             next_At = self.rng.choice(self.action_space, p=action_probs) 
-            self.policy_eval_improve(St,At,reward,next_state,next_At,done)
+            self.policy_eval_improve(St,At,reward,next_state,next_At,done,loss_trace)
+            
 
             if done:
                 # St = self.grid_world.get_current_state() #initialize S, but is no need since grid world help us reset and return as next_state
-                iter_episode+=1
                 # if iter_episode%1000==0:
                 #     print(iter_episode)
                 #     print("reward_trace:",reward_trace)
                 self.Rewards.append(np.mean(reward_trace))
+                self.Losses.append(np.mean(loss_trace))
                 reward_trace = []
+                loss_trace = []
                 if iter_episode>=9:
                     if iter_episode<=10000:#early stage, we want more samples
                         if iter_episode%300==9:
                             # print("self.Rewards:",self.Rewards)
                             Average_Reward = np.mean(list(self.Rewards))
+                            Average_Loss = np.mean(list(self.Losses))
                             wandb.log({
-                                "episode": iter_episode,  # 當前回合
-                                "total_reward": Average_Reward,  # 該回合的總回報
+                                "episode": iter_episode,
+                                "average_reward": Average_Reward,
+                                "loss": Average_Loss,
                             })
                     else:
                         if iter_episode%1000==10 or iter_episode==512000:
                             # print("self.Rewards:",self.Rewards)
                             Average_Reward = np.mean(list(self.Rewards))
+                            Average_Loss = np.mean(list(self.Losses))
                             wandb.log({
-                                "episode": iter_episode,  # 當前回合
-                                "total_reward": Average_Reward,  # 該回合的總回報
+                                "episode": iter_episode,
+                                "average_reward": Average_Reward,
+                                "loss": Average_Loss,
                             })
+                iter_episode+=1
 
 
             St = next_state
@@ -508,10 +539,21 @@ class Q_Learning(ModelFreeControl):
         prev_r = None
         is_done = False
         transition_count = 0
+        reward_trace  = []
+        loss_trace = []
+        self.Rewards = deque(maxlen=10) #remember the rewards of last 10 episodes
+        self.Losses = deque(maxlen=10) #remember the loss of last 10 episodes
         while iter_episode < max_episode:
             # TODO: write your code here
             # hint: self.grid_world.reset() is NOT needed here
             At, next_state, reward, is_done = self.collect_data() 
+            reward_trace.append(reward)
+
+            #trace loss
+            if is_done: #s2,a2 is meaningless
+                loss_trace.append(np.abs(reward + 0 - self.q_values[St,At]))
+            else:
+                loss_trace.append(np.abs(reward + self.discount_factor*max([self.q_values[next_state,a2] for a2 in range(4)]) - self.q_values[St,At]))
 
             #store to the transition
             self.add_buffer(St,At,reward,next_state,is_done)
@@ -525,9 +567,34 @@ class Q_Learning(ModelFreeControl):
                     self.policy_eval_improve(s,a,r,s2,done)
 
             if is_done:
+                # if iter_episode%1000==0:
+                #     print(iter_episode)
+                self.Rewards.append(np.mean(reward_trace))
+                self.Losses.append(np.mean(loss_trace))
+                reward_trace = []
+                loss_trace = []
+                if iter_episode>=9:
+                    if iter_episode<=1000:#early stage, we want more samples
+                        if iter_episode%30==9:
+                            # print("self.Rewards:",self.Rewards)
+                            Average_Reward = np.mean(list(self.Rewards))
+                            Average_Loss = np.mean(list(self.Losses))
+                            wandb.log({
+                                "episode": iter_episode,
+                                "average_reward": Average_Reward,
+                                "loss": Average_Loss,
+                            })
+                    else:
+                        if iter_episode%100==10 or iter_episode==50000:
+                            # print("self.Rewards:",self.Rewards)
+                            Average_Reward = np.mean(list(self.Rewards))
+                            Average_Loss = np.mean(list(self.Losses))
+                            wandb.log({
+                                "episode": iter_episode,
+                                "average_reward": Average_Reward,
+                                "loss": Average_Loss,
+                            })
                 iter_episode+=1
-                if iter_episode%1000==0:
-                    print(iter_episode)
 
             St = next_state
             

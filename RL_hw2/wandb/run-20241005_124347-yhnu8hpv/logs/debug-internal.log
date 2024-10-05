@@ -1,0 +1,18 @@
+{"time":"2024-10-05T12:43:47.7903545+08:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-05T12:43:47.7903545+08:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\wandb\\run-20241005_124347-yhnu8hpv\\logs\\debug-core.log"}
+{"time":"2024-10-05T12:43:47.7909197+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-05T12:43:47.795468+08:00","level":"INFO","msg":"created new stream","id":"yhnu8hpv"}
+{"time":"2024-10-05T12:43:47.7960003+08:00","level":"INFO","msg":"stream: started","id":"yhnu8hpv"}
+{"time":"2024-10-05T12:43:47.7960003+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"yhnu8hpv"}}
+{"time":"2024-10-05T12:43:47.7960003+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"yhnu8hpv"}}
+{"time":"2024-10-05T12:43:47.7960003+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"yhnu8hpv"}}
+{"time":"2024-10-05T12:43:48.1257395+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-05T12:43:48.1280209+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-05T12:43:57.8343094+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-05T12:43:57.8343094+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-05T12:43:58.6618288+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-05T12:43:59.9252807+08:00","level":"INFO","msg":"stream: closing","id":"yhnu8hpv"}
+{"time":"2024-10-05T12:43:59.9252807+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"yhnu8hpv"}}
+{"time":"2024-10-05T12:43:59.9252807+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"yhnu8hpv"}}
+{"time":"2024-10-05T12:43:59.9252807+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"yhnu8hpv"}}
+{"time":"2024-10-05T12:43:59.9258157+08:00","level":"INFO","msg":"stream: closed","id":"yhnu8hpv"}

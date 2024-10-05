@@ -1,0 +1,32 @@
+{"time":"2024-10-05T16:41:22.9175726+08:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-05T16:41:22.9175726+08:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\wandb\\run-20241005_164122-cdalpm1o\\logs\\debug-core.log"}
+{"time":"2024-10-05T16:41:22.9180878+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-05T16:41:22.9217273+08:00","level":"INFO","msg":"created new stream","id":"cdalpm1o"}
+{"time":"2024-10-05T16:41:22.9217273+08:00","level":"INFO","msg":"stream: started","id":"cdalpm1o"}
+{"time":"2024-10-05T16:41:22.9217273+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"cdalpm1o"}}
+{"time":"2024-10-05T16:41:22.9217273+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"cdalpm1o"}}
+{"time":"2024-10-05T16:41:22.9217273+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"cdalpm1o"}}
+{"time":"2024-10-05T16:41:23.2363542+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-05T16:41:23.239068+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-05T16:41:33.2397444+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:41:43.2396059+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:41:53.2397907+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:42:03.2393511+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:42:13.2399875+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:42:23.2393613+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:42:33.2395725+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:42:43.239608+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:42:53.2395752+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:43:03.2397488+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:43:13.239832+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:43:23.2394022+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:43:33.2396388+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:43:43.2395059+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:43:52.748653+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-05T16:43:52.748653+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-05T16:43:53.7596113+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-05T16:43:55.114805+08:00","level":"INFO","msg":"stream: closing","id":"cdalpm1o"}
+{"time":"2024-10-05T16:43:55.114805+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"cdalpm1o"}}
+{"time":"2024-10-05T16:43:55.114805+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"cdalpm1o"}}
+{"time":"2024-10-05T16:43:55.114805+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"cdalpm1o"}}
+{"time":"2024-10-05T16:43:55.1153116+08:00","level":"INFO","msg":"stream: closed","id":"cdalpm1o"}

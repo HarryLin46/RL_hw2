@@ -1,0 +1,34 @@
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Current SDK version is 0.18.2
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Configure stats pid to 20284
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Loading settings from C:\Users\harry\.config\wandb\settings
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Loading settings from C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\wandb\settings
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'RL_hw2\\main_report.py', 'program_abspath': 'C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\main_report.py', 'program': 'C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\main_report.py'}
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_init.py:_log_setup():532] Logging user logs to C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\wandb\run-20241005_163242-jyj3bgui\logs\debug.log
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_init.py:_log_setup():533] Logging internal logs to C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\wandb\run-20241005_163242-jyj3bgui\logs\debug-internal.log
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_init.py:init():616] calling init triggers
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_init.py:init():623] wandb.init called with sweep_config: {}
+config: {}
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_init.py:init():666] starting backend
+2024-10-05 16:32:42,800 INFO    MainThread:20284 [wandb_init.py:init():670] sending inform_init request
+2024-10-05 16:32:42,814 INFO    MainThread:20284 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=spawn, using: spawn
+2024-10-05 16:32:42,814 INFO    MainThread:20284 [wandb_init.py:init():683] backend started and connected
+2024-10-05 16:32:42,817 INFO    MainThread:20284 [wandb_init.py:init():778] updated telemetry
+2024-10-05 16:32:42,867 INFO    MainThread:20284 [wandb_init.py:init():811] communicating run to backend with 90.0 second timeout
+2024-10-05 16:32:43,325 INFO    MainThread:20284 [wandb_init.py:init():862] starting run threads in backend
+2024-10-05 16:32:43,357 INFO    MainThread:20284 [wandb_run.py:_console_start():2464] atexit reg
+2024-10-05 16:32:43,357 INFO    MainThread:20284 [wandb_run.py:_redirect():2312] redirect: wrap_raw
+2024-10-05 16:32:43,357 INFO    MainThread:20284 [wandb_run.py:_redirect():2377] Wrapping output streams.
+2024-10-05 16:32:43,357 INFO    MainThread:20284 [wandb_run.py:_redirect():2402] Redirects installed.
+2024-10-05 16:32:43,357 INFO    MainThread:20284 [wandb_init.py:init():906] run started, returning control to user process
+2024-10-05 16:32:43,357 INFO    MainThread:20284 [wandb_config.py:__setitem__():154] config set epsilon = 0.3 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x00000166E81BC8D0>>
+2024-10-05 16:32:43,358 INFO    MainThread:20284 [wandb_run.py:_config_callback():1393] config_cb epsilon 0.3 None
+2024-10-05 16:34:06,493 INFO    MainThread:20284 [wandb_run.py:_finish():2163] finishing run harrylin46-national-taiwan-university/RL_hw2_derive_both/jyj3bgui
+2024-10-05 16:34:06,493 INFO    MainThread:20284 [wandb_run.py:_atexit_cleanup():2427] got exitcode: 0
+2024-10-05 16:34:06,494 INFO    MainThread:20284 [wandb_run.py:_restore():2409] restore
+2024-10-05 16:34:06,494 INFO    MainThread:20284 [wandb_run.py:_restore():2415] restore done
+2024-10-05 16:34:08,767 INFO    MainThread:20284 [wandb_run.py:_footer_history_summary_info():4042] rendering history
+2024-10-05 16:34:08,768 INFO    MainThread:20284 [wandb_run.py:_footer_history_summary_info():4074] rendering summary
+2024-10-05 16:34:08,768 INFO    MainThread:20284 [wandb_run.py:_footer_sync_info():4001] logging synced files

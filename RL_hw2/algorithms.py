@@ -327,7 +327,7 @@ class MonteCarloPolicyIteration(ModelFreeControl):
             # TODO: write your code here
             # hint: self.grid_world.reset() is NOT needed here
 
-            
+            current_state = self.grid_world.get_current_state()
             state_trace   = [current_state]
             action_trace  = []
             reward_trace  = [-999] #for index convenient

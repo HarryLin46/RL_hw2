@@ -1,0 +1,27 @@
+{"time":"2024-10-05T20:57:36.3071799+08:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-05T20:57:36.3071799+08:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\wandb\\run-20241005_205736-dlefybro\\logs\\debug-core.log"}
+{"time":"2024-10-05T20:57:36.3201742+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-05T20:57:36.3250191+08:00","level":"INFO","msg":"created new stream","id":"dlefybro"}
+{"time":"2024-10-05T20:57:36.3250191+08:00","level":"INFO","msg":"stream: started","id":"dlefybro"}
+{"time":"2024-10-05T20:57:36.3250191+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"dlefybro"}}
+{"time":"2024-10-05T20:57:36.3250191+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"dlefybro"}}
+{"time":"2024-10-05T20:57:36.3250191+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"dlefybro"}}
+{"time":"2024-10-05T20:57:36.6661224+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-05T20:57:36.667145+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-05T20:57:46.6675994+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:57:56.667681+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:58:06.6677265+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:58:16.6694573+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:58:26.6680244+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:58:36.6678215+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:58:46.6675917+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:58:56.6677672+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:59:06.6675415+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T20:59:14.3196147+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-05T20:59:14.3196147+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-05T20:59:15.371711+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-05T20:59:16.624653+08:00","level":"INFO","msg":"stream: closing","id":"dlefybro"}
+{"time":"2024-10-05T20:59:16.624653+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"dlefybro"}}
+{"time":"2024-10-05T20:59:16.624653+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"dlefybro"}}
+{"time":"2024-10-05T20:59:16.624653+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"dlefybro"}}
+{"time":"2024-10-05T20:59:16.6327779+08:00","level":"INFO","msg":"stream: closed","id":"dlefybro"}

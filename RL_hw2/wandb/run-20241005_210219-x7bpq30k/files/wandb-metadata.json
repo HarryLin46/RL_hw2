@@ -1,0 +1,32 @@
+{
+  "os": "Windows-10-10.0.22631-SP0",
+  "python": "3.11.9",
+  "startedAt": "2024-10-05T13:02:19.717148Z",
+  "program": "C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\main_report.py",
+  "codePath": "RL_hw2\\main_report.py",
+  "git": {
+    "remote": "https://github.com/HarryLin46/RL_hw2.git",
+    "commit": "e5d740c2eba822293423deb05c3b6630db31eb3b"
+  },
+  "email": "r12942083@ntu.edu.tw",
+  "root": "C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2",
+  "host": "MSI_Infinite_S3",
+  "username": "harry",
+  "executable": "C:\\Users\\harry\\anaconda3\\envs\\rl_hw2\\python.exe",
+  "codePathLocal": "main_report.py",
+  "cpu_count": 10,
+  "cpu_count_logical": 16,
+  "disk": {
+    "/": {
+      "total": "997091962880",
+      "used": "140499226624"
+    }
+  },
+  "memory": {
+    "total": "17014009856"
+  },
+  "cpu": {
+    "count": 10,
+    "countLogical": 16
+  }
+}

@@ -1,0 +1,10 @@
+[1m[4mQ_Learning Policy Iteration[0m[0m
+Traceback (most recent call last):
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\main_report.py", line 251, in <module>
+    run_Q_Learning(grid_world, 50000)
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\main_report.py", line 195, in run_Q_Learning
+    policy_iteration.run(max_episode=iter_num)
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\algorithms_report.py", line 552, in run
+    loss_trace.append(np.abs(r + self.discount_factor*max([self.q_values[s2,a2] for a2 in range(4)]) - self.q_values[s,a]))
+                             ^
+UnboundLocalError: cannot access local variable 'r' where it is not associated with a value

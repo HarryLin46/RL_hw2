@@ -5,7 +5,7 @@ gt_file_path = 'sample_solutions/prediction_GT.npy'  # 替換為你的 Ground Tr
 gt_data = np.load(gt_file_path)
 
 # 讀取含有多個樣本的 .npy 檔案
-sample_file_path = 'my_result/TD.npy'  # 替換為你的樣本檔案路徑
+sample_file_path = 'my_result/MC.npy'  # 替換為你的樣本檔案路徑
 samples_data = np.load(sample_file_path)
 
 # 假設 samples_data 的形狀為 (num_samples, ...) 

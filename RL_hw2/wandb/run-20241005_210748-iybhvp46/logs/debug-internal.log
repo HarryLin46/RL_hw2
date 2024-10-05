@@ -1,0 +1,25 @@
+{"time":"2024-10-05T21:07:48.9675979+08:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-05T21:07:48.9675979+08:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\wandb\\run-20241005_210748-iybhvp46\\logs\\debug-core.log"}
+{"time":"2024-10-05T21:07:48.9681311+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-05T21:07:48.9717566+08:00","level":"INFO","msg":"created new stream","id":"iybhvp46"}
+{"time":"2024-10-05T21:07:48.9717566+08:00","level":"INFO","msg":"stream: started","id":"iybhvp46"}
+{"time":"2024-10-05T21:07:48.9717566+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"iybhvp46"}}
+{"time":"2024-10-05T21:07:48.9717566+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"iybhvp46"}}
+{"time":"2024-10-05T21:07:48.9717566+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"iybhvp46"}}
+{"time":"2024-10-05T21:07:50.3678045+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-05T21:07:50.3688227+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-05T21:08:00.3692013+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T21:08:10.3693371+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T21:08:20.3697953+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T21:08:30.3694894+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T21:08:40.3699354+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T21:08:50.369178+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T21:09:00.3809501+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T21:09:07.5504221+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-05T21:09:07.5505499+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-05T21:09:08.5825655+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-05T21:09:09.8428268+08:00","level":"INFO","msg":"stream: closing","id":"iybhvp46"}
+{"time":"2024-10-05T21:09:09.8428268+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"iybhvp46"}}
+{"time":"2024-10-05T21:09:09.8428268+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"iybhvp46"}}
+{"time":"2024-10-05T21:09:09.8428268+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"iybhvp46"}}
+{"time":"2024-10-05T21:09:09.8460011+08:00","level":"INFO","msg":"stream: closed","id":"iybhvp46"}

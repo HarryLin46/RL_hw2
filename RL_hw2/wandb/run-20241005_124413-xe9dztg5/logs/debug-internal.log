@@ -1,0 +1,19 @@
+{"time":"2024-10-05T12:44:13.418015+08:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-05T12:44:13.418015+08:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\wandb\\run-20241005_124413-xe9dztg5\\logs\\debug-core.log"}
+{"time":"2024-10-05T12:44:13.4185378+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-05T12:44:13.422163+08:00","level":"INFO","msg":"created new stream","id":"xe9dztg5"}
+{"time":"2024-10-05T12:44:13.422163+08:00","level":"INFO","msg":"stream: started","id":"xe9dztg5"}
+{"time":"2024-10-05T12:44:13.422163+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"xe9dztg5"}}
+{"time":"2024-10-05T12:44:13.422163+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"xe9dztg5"}}
+{"time":"2024-10-05T12:44:13.422163+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"xe9dztg5"}}
+{"time":"2024-10-05T12:44:13.7344713+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-05T12:44:13.7354935+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-05T12:44:23.7361797+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T12:44:25.8736809+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-05T12:44:25.8736809+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-05T12:44:26.7687561+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-05T12:44:28.0325532+08:00","level":"INFO","msg":"stream: closing","id":"xe9dztg5"}
+{"time":"2024-10-05T12:44:28.0325532+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"xe9dztg5"}}
+{"time":"2024-10-05T12:44:28.0325532+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"xe9dztg5"}}
+{"time":"2024-10-05T12:44:28.0325532+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"xe9dztg5"}}
+{"time":"2024-10-05T12:44:28.0332687+08:00","level":"INFO","msg":"stream: closed","id":"xe9dztg5"}

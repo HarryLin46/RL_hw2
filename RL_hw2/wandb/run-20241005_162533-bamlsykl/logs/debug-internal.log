@@ -1,0 +1,25 @@
+{"time":"2024-10-05T16:25:33.7446066+08:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-05T16:25:33.7446066+08:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\wandb\\run-20241005_162533-bamlsykl\\logs\\debug-core.log"}
+{"time":"2024-10-05T16:25:33.7451229+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-05T16:25:33.7476905+08:00","level":"INFO","msg":"created new stream","id":"bamlsykl"}
+{"time":"2024-10-05T16:25:33.7482049+08:00","level":"INFO","msg":"stream: started","id":"bamlsykl"}
+{"time":"2024-10-05T16:25:33.7482049+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"bamlsykl"}}
+{"time":"2024-10-05T16:25:33.7482049+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"bamlsykl"}}
+{"time":"2024-10-05T16:25:33.7482049+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"bamlsykl"}}
+{"time":"2024-10-05T16:25:34.1859465+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-05T16:25:34.1869951+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-05T16:25:44.1873228+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:25:54.1877588+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:26:04.2003603+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:26:14.1875026+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:26:24.1883279+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:26:34.1943331+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:26:44.1875722+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T16:26:49.4598353+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-05T16:26:49.4605911+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-05T16:26:50.5700118+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-05T16:26:51.7905511+08:00","level":"INFO","msg":"stream: closing","id":"bamlsykl"}
+{"time":"2024-10-05T16:26:51.7905511+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"bamlsykl"}}
+{"time":"2024-10-05T16:26:51.7905511+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"bamlsykl"}}
+{"time":"2024-10-05T16:26:51.7905511+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"bamlsykl"}}
+{"time":"2024-10-05T16:26:51.7910564+08:00","level":"INFO","msg":"stream: closed","id":"bamlsykl"}

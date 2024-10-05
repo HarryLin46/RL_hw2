@@ -236,7 +236,7 @@ if __name__ == "__main__":
 
     for epsilon_value in epsilon_values:
         # 每次實驗都必須初始化 W&B
-        wandb.init(project="RL_hw2_derive_lr_curve", name=f"TD_epsilon_{epsilon_value}", reinit=True)
+        wandb.init(project="RL_hw2_derive_all", name=f"Q_learning_epsilon_{epsilon_value}", reinit=True)
         
         # 設置超參數
         # wandb.config.max_episode = 1000  # 最大回合數
@@ -247,7 +247,8 @@ if __name__ == "__main__":
         # 執行策略迭代
         # iter_num = wandb.config.max_episode
         # run_MC_policy_iteration(grid_world, 512000)
-        run_SARSA(grid_world, 512000)
+        # run_SARSA(grid_world, 512000)
+        run_Q_Learning(grid_world, 50000)
 
         # 記得在每次實驗結束時結束 W&B 實驗
         wandb.finish()

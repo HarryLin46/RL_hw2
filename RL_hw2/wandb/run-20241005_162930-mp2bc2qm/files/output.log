@@ -1,0 +1,25 @@
+[1m[4mMC Policy Iteration[0m[0m
+It's iter:0
+[-0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, 1.0]
+-0.06451612903225809
+list[deque([], maxlen=10)]
+Traceback (most recent call last):
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\main_report.py", line 249, in <module>
+    run_MC_policy_iteration(grid_world, 512000)
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\main_report.py", line 141, in run_MC_policy_iteration
+    policy_iteration.run(max_episode=iter_num)
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\algorithms_report.py", line 340, in run
+    self.policy_evaluation(state_trace,action_trace,reward_trace,self.Losses)
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\algorithms_report.py", line 283, in policy_evaluation
+    At, next_state, reward, done = self.collect_data()
+                                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\algorithms_report.py", line 255, in collect_data
+    next_state, reward, done = self.grid_world.step(action)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\gridworld.py", line 197, in step
+    next_state_coord = self.__get_next_state(state_coord, action)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harry\OneDrive\Desktop\cloud backup\RL\HW\HW2\RL_hw2\RL_hw2\gridworld.py", line 171, in __get_next_state
+    return tuple(next_state_coord)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
