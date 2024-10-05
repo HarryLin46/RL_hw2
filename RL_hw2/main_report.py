@@ -232,7 +232,7 @@ if __name__ == "__main__":
 
     # 2-2
     grid_world = init_grid_world("maze.txt")
-    epsilon_values = [0.2]#, 0.2, 0.3, 0.4]
+    epsilon_values = [0.1, 0.2, 0.3, 0.4]
 
     for epsilon_value in epsilon_values:
         # 每次實驗都必須初始化 W&B

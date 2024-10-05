@@ -1,0 +1,23 @@
+{"time":"2024-10-05T12:05:39.595732+08:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-10-05T12:05:39.5965635+08:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\harry\\OneDrive\\Desktop\\cloud backup\\RL\\HW\\HW2\\RL_hw2\\RL_hw2\\wandb\\run-20241005_120539-twblvpw6\\logs\\debug-core.log"}
+{"time":"2024-10-05T12:05:39.6156657+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-05T12:05:39.6197664+08:00","level":"INFO","msg":"created new stream","id":"twblvpw6"}
+{"time":"2024-10-05T12:05:39.6202974+08:00","level":"INFO","msg":"stream: started","id":"twblvpw6"}
+{"time":"2024-10-05T12:05:39.6202974+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"twblvpw6"}}
+{"time":"2024-10-05T12:05:39.6202974+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"twblvpw6"}}
+{"time":"2024-10-05T12:05:39.6202974+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"twblvpw6"}}
+{"time":"2024-10-05T12:05:39.9182853+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-05T12:05:39.9239727+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-05T12:05:49.924516+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T12:05:59.9249038+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T12:06:09.9244613+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T12:06:19.9244499+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T12:06:29.924084+08:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}
+{"time":"2024-10-05T12:06:35.5558884+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-05T12:06:35.5558884+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-05T12:06:36.4629011+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-05T12:06:37.7760524+08:00","level":"INFO","msg":"stream: closing","id":"twblvpw6"}
+{"time":"2024-10-05T12:06:37.7760524+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"twblvpw6"}}
+{"time":"2024-10-05T12:06:37.7760524+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"twblvpw6"}}
+{"time":"2024-10-05T12:06:37.7760524+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"twblvpw6"}}
+{"time":"2024-10-05T12:06:37.7779385+08:00","level":"INFO","msg":"stream: closed","id":"twblvpw6"}

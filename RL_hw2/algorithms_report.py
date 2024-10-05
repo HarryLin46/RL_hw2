@@ -348,11 +348,11 @@ class MonteCarloPolicyIteration(ModelFreeControl):
                 print(np.mean(reward_trace[1:]))
                 print(list[self.Rewards])
             self.Rewards.append(np.mean(reward_trace[1:]))
-            if iter_episode>=9:
+            if iter_episode>=9 and iter_episode%1000==0:
                 Average_Reward = np.mean(list(self.Rewards))
                 wandb.log({
                     "episode": iter_episode,  # 當前回合
-                    "total_reward": Average_Reward,  # 該回合的總回報
+                    "total_reward": np.log(Average_Reward),  # 該回合的總回報
                 })
             iter_episode += 1
 
@@ -415,16 +415,29 @@ class SARSA(ModelFreeControl):
             if done:
                 # St = self.grid_world.get_current_state() #initialize S, but is no need since grid world help us reset and return as next_state
                 iter_episode+=1
-                if iter_episode%1000==0:
-                    print(iter_episode)
+                # if iter_episode%1000==0:
+                #     print(iter_episode)
+                #     print("reward_trace:",reward_trace)
                 self.Rewards.append(np.mean(reward_trace))
                 reward_trace = []
                 if iter_episode>=9:
-                    Average_Reward = np.mean(list(self.Rewards))
-                    wandb.log({
-                        "episode": iter_episode,  # 當前回合
-                        "total_reward": Average_Reward,  # 該回合的總回報
-                    })
+                    if iter_episode<=10000:#early stage, we want more samples
+                        if iter_episode%300==9:
+                            # print("self.Rewards:",self.Rewards)
+                            Average_Reward = np.mean(list(self.Rewards))
+                            wandb.log({
+                                "episode": iter_episode,  # 當前回合
+                                "total_reward": Average_Reward,  # 該回合的總回報
+                            })
+                    else:
+                        if iter_episode%1000==10 or iter_episode==512000:
+                            # print("self.Rewards:",self.Rewards)
+                            Average_Reward = np.mean(list(self.Rewards))
+                            wandb.log({
+                                "episode": iter_episode,  # 當前回合
+                                "total_reward": Average_Reward,  # 該回合的總回報
+                            })
+
 
             St = next_state
             At = next_At
