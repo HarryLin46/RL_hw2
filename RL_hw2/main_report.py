@@ -1,8 +1,9 @@
 import random
 import numpy as np
 import json
+import wandb
 
-from algorithms import (
+from algorithms_report import (
     MonteCarloPrediction,
     TDPrediction,
     NstepTDPrediction,
@@ -210,14 +211,46 @@ def run_Q_Learning(grid_world: GridWorld, iter_num: int):
 
 if __name__ == "__main__":
     seed = 1
-    grid_world = init_grid_world("maze.txt",INIT_POS)
-    # 2-1
-    # run_MC_prediction(grid_world,seed)
+    # grid_world = init_grid_world("maze.txt",INIT_POS)
+    # # 2-1
+    # pred_Vs = []  # 用來儲存多個樣本結果
+    
+    # for seed in np.random.choice(np.arange(1, 201, dtype=int), size=50, replace=False):
+    #     # 使用不同的 seed 來生成預測樣本
+    #     # pred_V = run_MC_prediction(grid_world, seed)
+    #     pred_V = run_TD_prediction(grid_world,seed)
+    #     pred_Vs.append(pred_V)  # 將每個樣本結果加入列表中
+    
+    # # 將樣本列表轉換成 NumPy 陣列
+    # pred_Vs_np = np.array(pred_Vs)
+    
+    # # 將樣本數據保存為 .npy 檔案
+    # print("Saving MC.npy, whose shape",pred_Vs_np.shape)
+    # np.save('my_result/TD.npy', pred_Vs)
     # run_TD_prediction(grid_world,seed)
     # run_NstepTD_prediction(grid_world,seed)
 
     # 2-2
     grid_world = init_grid_world("maze.txt")
-    run_MC_policy_iteration(grid_world, 512000)
+    epsilon_values = [0.2]#, 0.2, 0.3, 0.4]
+
+    for epsilon_value in epsilon_values:
+        # 每次實驗都必須初始化 W&B
+        wandb.init(project="RL_hw2_derive_lr_curve", name=f"TD_epsilon_{epsilon_value}", reinit=True)
+        
+        # 設置超參數
+        # wandb.config.max_episode = 1000  # 最大回合數
+        # wandb.config.gamma = 0.9  # 折扣因子
+        wandb.config.epsilon = epsilon_value  # 設定 epsilon 為當前實驗值
+        EPSILON = epsilon_value
+
+        # 執行策略迭代
+        # iter_num = wandb.config.max_episode
+        # run_MC_policy_iteration(grid_world, 512000)
+        run_SARSA(grid_world, 512000)
+
+        # 記得在每次實驗結束時結束 W&B 實驗
+        wandb.finish()
+    # run_MC_policy_iteration(grid_world, 512000)
     # run_SARSA(grid_world, 512000)
     # run_Q_Learning(grid_world, 50000)
